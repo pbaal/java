@@ -1,0 +1,18 @@
+public class Zeitrechnung
+
+{
+  public static void main(String[] args)
+  {
+    Out.println("Bitte eine Zahl eingeben");
+	int zeit = In.readInt();
+	int tage = 0;
+	int stunden = 0;
+	int minuten = 0;
+	int sekunden = zeit;
+	if (zeit/86400 > 0)  tage = zeit/86400; zeit = zeit%86400;
+	if (zeit/3600 > 0) stunden = zeit/3600; zeit = zeit%3600;
+	if (zeit/60 >= 0) {minuten = zeit/60; sekunden = zeit%60;} 
+	Out.println("Die umgerechnete Zeit ist: ");
+	Out.println(tage +" Tage "+ stunden +" Stunden "+ minuten +" Minuten "+ sekunden +" Sekunden.");
+  }
+}
