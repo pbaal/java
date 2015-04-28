@@ -1,0 +1,35 @@
+/**
+Programm zum Runden von eingegebenen Zahlen
+*/
+
+public class Runder 
+{
+  public static void main (String[] args) 
+  {
+    /*Teil a)*/
+    //Out.println("Bitte eine Zahl eingeben : ");
+    //int x = In.readInt();
+    //int roundedX = x /100 *100;
+    //Out.print("Abgerundete Zahl = ");
+    //Out.println(roundedX);
+
+	
+    // /*Teil b)*/
+    // Out.println("Bitte eine Zahl eingeben : ");
+    // int x = In.readInt();
+    // int roundedX = (x+50) /100 *100;
+    // Out.print("Abgerundete Zahl = ");
+    // Out.println(roundedX);
+  
+  
+    /*Teil c)*/
+    Out.println("Bitte eine Zahl eingeben und die Bezugsgröße nach der gerundet werden soll: ");
+    int x = In.readInt();
+    int b = In.readInt();
+    int roundedX = (x+b /2) /b *b;
+    Out.print("Abgerundete Zahl = ");
+    Out.println(roundedX); 
+  }
+}
+
+
