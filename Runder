@@ -14,7 +14,7 @@ public class Runder
     //Out.println(roundedX);
 
 	
-    // /*Teil b)*/
+    /*Teil b)*/
     // Out.println("Bitte eine Zahl eingeben : ");
     // int x = In.readInt();
     // int roundedX = (x+50) /100 *100;
