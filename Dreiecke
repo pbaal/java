@@ -1,0 +1,18 @@
+public class Dreiecke
+{
+  public static void main (String[] args)
+  {
+    Out.println("Drei Seitenlängen eingeben: ");
+    int x = In.readInt();
+    int y = In.readInt();
+    int z = In.readInt();
+	String typ = "";
+    {
+      if (x == y && x == z) typ = "gleichseitig"; else 
+      if ((x^2)+(y^2) == (z^2) || (x^2)+(z^2) == (y^2) || (y^2)+(z^2) == (x^2)) typ = "rechtwinklig"; else
+      if (x == y && z < x || x == z && y < x || y == z && x < y) typ = "gleichschenklig"; else 
+      typ = "ungültig"; //if (x+y <= z || x+z <= y || y+z <= x)
+    }
+	Out.println("Das Dreieck ist " + typ);
+  }
+}
