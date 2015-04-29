@@ -2,8 +2,8 @@ public class Statistik
 {
   public static void main(String[] args)
   {
-    In.open("Sequence01.txt");
-    int negative = 0, positive = 0, max = 0, min = 0, mittel = 0, mehrfach = 0, geleseneWerte = 0;
+    In.open("Sequence02.txt");
+    int negative = 0, positive = 0, max = 0, min = 0, mittel = 0, mehrfach = 1, geleseneWerte = 0;
     int summe =0;
     while (In.done())
     {
