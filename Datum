@@ -1,0 +1,32 @@
+/*Das Javaprogramm soll ein eigebenenes Datum auf Plausibilitaet pruefen,
+d.h. ob es ein gueltiges Datum ist.
+Die Eingabe besteht aus 3 Zahlen (Tag, Monat, Jahr).*/
+
+public class Datum
+{
+	public static void main(String[] args)
+	{
+		Out.println("Bitte geben sie 3 Zahlen fuer ein Datum ein: (Tag, Monat, Jahr) ");
+		int tag = In.readInt();
+		int monat = In.readInt();
+		int jahr = In.readInt();
+		int tage = 0;//Pruefvariable
+		if (jahr < 0)
+			Out.println("Nur Jahre ab 0 eingeben!");
+		else;
+		if (monat > 0 && monat < 13)
+		{
+		  switch (monat)
+		  {
+		  	case 1: case 3: case 5: case 7: case 8: case 10: case 12: tage = 31; break;
+		  	case 4: case 6: case 9: case 11: tage = 30; break;
+		  	case 2: if (jahr %4 == 4)
+		    if (jahr %100 == 0 && (jahr %400) == 0) //alle 100 Jahre kein Schaltjahr, wenn nicht durch 400 teilbar
+		    tage = 29; else; tage = 28; break;
+		  }
+		}
+		else Out.println("Monate nur zwischen 1 und 12 eingeben!");
+		if (tag == tage) 
+			Out.println("OK");
+	}
+}
