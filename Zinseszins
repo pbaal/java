@@ -1,0 +1,21 @@
+/*Javaprogramm zur Berechnung von Zinseszins.
+Die Eingabe besteht aus 3 Werten: Startkapital (in Eurocent), Zinssatz und Laufzeit (in ganzen Jahren).
+Die Ausgabe soll eine Zinseszinstabelle sein.
+*/
+
+public class Runder 
+{
+  public static void main (String[] args) 
+  {
+    Out.println("Bitte Startkapital, Zinssatz und Laufzeit eingeben: ");
+    int start = In.readInt();
+    int zins = In.readInt();
+    int jahre = In.readInt();
+    Out.println("Die Zinseszinstabelle sieht entsprechend so aus: ");
+    Out.println("Zinssatz :     Jahr:    Kapital:    ");
+    for (int i = 0; i < jahre; i++)
+    int kapital = start * ((100 + zins)/100)^i;
+    Out.println(zins+ jahre+ kapital);
+  }
+  
+}
