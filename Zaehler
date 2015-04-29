@@ -10,13 +10,13 @@ public class Zaehler
   public static void main(String[] args)
   {
 		Out.println("Bitte eine positive Zahl eingeben: ");
-	  int zahl = In.readInt();
+	 	int zahl = In.readInt();
 		int i = 0; //Ziffernzähler
 		int zahl2 = zahl;
 		do
 		{
-			zahl2 = zahl2 / 10;
-			i++; 
+		  zahl2 = zahl2 / 10;
+		  i++; 
 		}
 		while (zahl2 > 0);
 		Out.println("Die Zahl " +zahl+ " besteht aus " +i+ " Ziffern.");
