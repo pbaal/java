@@ -63,4 +63,4 @@ public class Zaehler
 		while(0 != zahl);
 		return pruefziffer = summe % 10;
 	}
-}
+} 
