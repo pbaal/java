@@ -1,0 +1,29 @@
+public class Statistik
+{
+  public static void main(String[] args)
+  {
+    In.open("Sequence01.txt");
+    int negative = 0, positive = 0, max = 0, min = 0, mittel = 0, mehrfach = 0, geleseneWerte = 0;
+    int summe =0;
+    while (In.done())
+    {
+      int x = In.readInt();
+      geleseneWerte++;
+      if (x<0) negative +=1;
+      else
+      if (x>0) positive +=1;
+      if (x>=max) if (x>max) {max = x;} else {max = x; mehrfach++;};
+      if (x<min) min = x;
+			summe = summe + x;
+			mittel = summe / geleseneWerte;
+    }
+    Out.println("Die ausgelesene Datei hat ");
+		Out.println(negative +" Negative Werte, ");
+		Out.println(positive +" echt Positive Werte, ");
+		Out.println("einen Maximalwert bei " +max);
+		Out.println("einen Minimalwert bei " +min);
+		Out.println("und einen Mittelwert bei " +mittel);
+		Out.println("Der Maximalwert kommt " +mehrfach+ "-mal vor.");
+    In.close();
+  }
+}
