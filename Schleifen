@@ -1,0 +1,48 @@
+import java.util.ArrayList;
+
+public class Schleifen
+{
+  public static void main (String[] args)
+  {
+    int[] array = {1,2,3,4,5};
+    
+    int resFor = 0;
+    for (int i = 0; i<array.length; i++)
+    {
+      resFor += array[i];
+    }
+    
+    int resWhile = 0;
+    int i = 0;
+    while (i<array.length)
+    {
+      resWhile += array[i];
+      i++;
+    }
+    
+    int resDoWhile = 0;
+    i = 0;
+    do
+    {
+      resDoWhile += array[i];
+      i++;
+    }
+    while (i<array.length);
+    
+    int resForEach = 0;
+    for (int k : array) //k als aktuelle Position, und ueber array wird itteriert
+    {
+      resForEach += k;
+    }
+    
+    
+    ArrayList<Integer> listt = new ArrayList<Integer>();
+    list.add(resFor);
+    list.add(resWhile);
+    list.add(resDoWhile);
+    list.add(resForEach);
+    list.forEach(e-> System.out.println(e));
+    
+  }
+  
+}
