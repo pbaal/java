@@ -1,0 +1,42 @@
+public class Dreieck
+{
+  public static void main (String[] args)
+  {
+    Out.println("Drei Seitenlängen eingeben: ");
+    double a = In.readDouble();
+    double b = In.readDouble();
+    double c = In.readDouble();
+    double s = 0.0;
+    s = (a+b+c)/2;
+    s = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+    Out.println("Die Fläche des Dreiecks ist: " +s);
+  }
+  
+  public void area()
+  {
+  //array oder variable
+    while (In.done())
+    {
+      double a = In.readDouble();
+      double b = In.readDouble();
+      double c = In.readDouble();
+      double s = 0.0;
+      s = (a+b+c)/2;
+      s = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+    }
+    
+  }
+  
+  double totalArea = 0;
+  for(;;) 
+  {
+  double s1,s2,s3;
+  Out.print("Seitenlöne für Dreieck eingeben: ");
+  s1 = In.
+  if(!In.done()) break; //Strg +E bricht die Schleife ab
+  s2 = In.
+  s3 = In.
+  totalArea += area(s1,s2,s3);
+  }
+  Out.println(totalArea);
+}
