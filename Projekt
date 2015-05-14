@@ -1,0 +1,59 @@
+import java.util.Arrays;
+
+public class Projekt
+{
+	static char[][] level01 = {
+	{' ',' ','#','#','#','#',' ',' ',' '},
+	{'#','#','#',' ',' ','#','#','#','#'},
+	{'#',' ',' ',' ',' ',' ','$',' ','#'},
+	{'#',' ','#',' ',' ','#','$',' ','#'},
+	{'#',' ','.',' ','.','#','@',' ','#'},
+  {'#','#','#','#','#','#','#','#','#'},};
+	
+	/**Liest ein Level ein*/
+	static char[][] levelEinlesen(String str)
+	{
+		In.open(str);
+		int l = In.readLine().length();
+	  char[][] level = new char[zeilenZahl(str)][l];
+		for (int i = 0; i < level.length; i++)
+		{
+			level[i] = In.readLine().toCharArray();
+		}
+		In.close();
+		return level;
+	}
+	/**Gibt ein Level wieder aus*/
+  static void levelAusgeben(char[][] lvl)
+	{
+		for (int i = 0; i < lvl.length; i++)
+			Out.println(lvl[i]);
+		//Andere Version, falls die Liste mit Zeilenumbruch endet.
+		// for (int k = 0; k < lvl.length; ++k) 
+		// {
+      // for (int l = 0; l < lvl[k].length; ++l) 
+			// {
+        // Out.print(lvl[k][l]);
+      // }
+	  // }
+	}
+	/**Zählt die Zeilen in einer Datei*/
+	static int zeilenZahl(String str)
+	{
+		In.open(str);
+		int i = In.readLine().length();
+		In.close();
+		return i;
+	}
+  public static void main(String[] args)
+	{
+		//Out.println(zeilenZahl("Level01.txt"));
+		
+		levelAusgeben(level01);
+		Out.println("-----------");
+	  levelAusgeben(levelEinlesen("Level01.txt"));
+  }
+
+	
+}
+
