@@ -1,0 +1,42 @@
+public class MagQuadrat
+{
+
+  public static void main(String[] args)
+  {
+    Out.println("Bitte Zahl eingeben: ");
+    int n = In.readInt();
+    Out.println("Bitte nxn-Matrix eingeben: ");
+    int[][] quadrat = new int[n][n];
+    for (int i = 0; i < n; i++)
+      for (int j = 0; j < n; j++)
+        quadrat[i][j] = In.readInt();
+    for (int i = 0; i < n; i++)
+      for (int j = 0; j < n; j++)
+			  Out.print(quadrat[i][j]+" ");
+			  Out.println("---------");
+			  Out.println(quadrat[0][0] +" "+quadrat[0][1]);
+			  Out.println(quadrat[1][0] +" "+quadrat[1][1]);
+			  
+		int zeilensum1 = 0; int zeilensum2 = 0; int spaltensum = 0; int diagonalsum = 0;	  
+		//for (int i = 0; i < n; i++)
+		  for (int j = 0; j < n; j++)
+		    
+		    zeilensum1 += quadrat[0][j];
+		    Out.println("Zeilensumme 1: " +zeilensum1);
+		//for (int i = 0; i < n; i++)
+		  for (int j = 0; j < n; j++)
+		    zeilensum2 += quadrat[1][j];
+		    Out.println("Zeilensumme 2: " +zeilensum2);
+		Out.println(zeilensumme(quadrat));
+		    //while ()
+		    
+  }
+  static int zeilensumme(int[][] qad)
+  {
+    int zeilensum = 0;
+    for (int i = 0; i < qad.length; i++)
+      for (int j = 0; j < qad[i].length; j++)
+        zeilensum += qad[i][j];
+    return zeilensum;
+  }
+}
