@@ -1,3 +1,4 @@
+
 import java.util.Arrays;
 
 public class Projekt
@@ -15,6 +16,8 @@ public class Projekt
 	{
 		In.open(str);
 		int l = In.readLine().length();
+		In.close();
+		In.open(str);
 	  char[][] level = new char[zeilenZahl(str)][l];
 		for (int i = 0; i < level.length; i++)
 		{
@@ -28,14 +31,6 @@ public class Projekt
 	{
 		for (int i = 0; i < lvl.length; i++)
 			Out.println(lvl[i]);
-		//Andere Version, falls die Liste mit Zeilenumbruch endet.
-		// for (int k = 0; k < lvl.length; ++k) 
-		// {
-      // for (int l = 0; l < lvl[k].length; ++l) 
-			// {
-        // Out.print(lvl[k][l]);
-      // }
-	  // }
 	}
 	/**Zählt die Zeilen in einer Datei*/
 	static int zeilenZahl(String str)
@@ -47,13 +42,13 @@ public class Projekt
 	}
   public static void main(String[] args)
 	{
+	  Out.println("Bitte Level eingeben: ");
+	  String str = In.readLine();
 		//Out.println(zeilenZahl("Level01.txt"));
 		
-		levelAusgeben(level01);
-		Out.println("-----------");
-	  levelAusgeben(levelEinlesen("Level01.txt"));
+		//levelAusgeben(level01);
+		//Out.println("-----------");
+	  levelAusgeben(levelEinlesen(str));
+	  Out.println("Zeilen: "+zeilenZahl(str));
   }
-
-	
 }
-
