@@ -1,4 +1,3 @@
-
 import java.util.Arrays;
 
 public class Projekt
@@ -17,8 +16,8 @@ public class Projekt
 		In.open(str);
 		int l = In.readLine().length();
 		In.close();
-		In.open(str);
 	  char[][] level = new char[zeilenZahl(str)][l];
+	  In.open(str);
 		for (int i = 0; i < level.length; i++)
 		{
 			level[i] = In.readLine().toCharArray();
@@ -40,6 +39,11 @@ public class Projekt
 		In.close();
 		return i;
 	}
+	/**Bewegt die Figur*/
+	static void move()
+	{
+	
+	}
   public static void main(String[] args)
 	{
 	  Out.println("Bitte Level eingeben: ");
@@ -49,6 +53,6 @@ public class Projekt
 		//levelAusgeben(level01);
 		//Out.println("-----------");
 	  levelAusgeben(levelEinlesen(str));
-	  Out.println("Zeilen: "+zeilenZahl(str));
+    Out.println(zeilenZahl(str));
   }
 }
