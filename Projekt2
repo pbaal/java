@@ -1,0 +1,150 @@
+import java.util.Arrays;
+
+public class Pro
+{
+	/** Liest ein Level aus einer Datei ein
+	*/
+	static char[][] levelEinlesen(String filename)
+	{
+		int l = zeilenAnzahl(filename);
+		String zeile = null;
+		char[][] level = new char[l-1][];
+		In.open(filename);
+		for (int i = 0; i < l-1; i++)
+		{
+			zeile = In.readLine();
+			level[i] = zeile.toCharArray();
+		}
+		return level;
+	}
+	/** Gibt ein eingelesenes Level in die Console aus
+	*/
+	static void levelAusgeben(char[][] level)
+	{
+		Out.println("-----------------");
+		for (int i = 0; i < level.length; i++)
+				Out.println(level[i]);
+		Out.println("-----------------");
+	}
+	/* Hilfsfunktion: Zählt die Zeilen einer Datei vor dem Lesen
+	*/
+	static int zeilenAnzahl(String filename)
+	{
+		int l = 0;
+		In.open(filename);
+		while(In.done())
+		{
+			In.readLine();
+			l++;
+		}
+		In.close();
+		return l;
+	}
+	/** Ändert ein Zeichen auf dem Level -> Bewegung von Objekten 
+	*/
+	static char[][] ändere(char[][] level, int x, int y, char zeichen)
+	{
+		level[x][y] = zeichen;
+		return level;
+	}
+	/** Funktionen zur Bewegung der Spielfigur
+	*/
+	static void bewegeFigur()
+	{
+		
+	}
+	static void moveHoch(char[][] level)
+	{
+		int y = posY(level); int x = posX(level);
+		if (level[y-1][x] == '#')
+		  Out.println("Autsch!");
+		else
+		{
+			ändere(level,  y-1,  x,  '@');
+		  ändere(level,  y,  x,  ' ');
+		}
+	}
+	static void moveRunter(char[][] level)
+	{
+		int y = posY(level); int x = posX(level);
+		if (level[y+1][x] == '#')
+		  Out.println("Autsch!");
+		else
+		{
+			ändere(level,  y+1,  x,  '@');
+		  ändere(level,  y,  x,  ' ');
+		}
+	}
+	static void moveRechts(char[][] level)
+	{
+		int y = posY(level); int x = posX(level);
+		if (level[y][x+1] == '#')
+		  Out.println("Autsch!");
+		else
+		{
+			ändere(level,  y,  x+1,  '@');
+		  ändere(level,  y,  x,  ' ');
+		}
+	}
+	static void moveLinks(char[][] level)
+	{
+		int y = posY(level); int x = posX(level);
+		if (level[y][x-1] == '#')
+		  Out.println("Autsch!");
+		else
+		{
+			ändere(level,  y,  x-1,  '@');
+		  ändere(level,  y,  x,  ' ');
+		}
+	}
+	/* Hilfsfunktion: Sucht nach der Spielfigur im Level
+	*/
+	static int posX(char[][] level)
+	{
+		int posX = 0;
+		for (int i = 0; i < level.length; i++)
+			for (int j = 0; j < level[i].length; j++)
+			{
+				if (level[i][j] == ('@'))
+				{
+					posX = j;
+				}
+			}
+		return posX;
+	}
+	/* Hilfsfunktion: Sucht nach der Spielfigur im Level
+	*/
+	static int posY(char[][] level)
+	{
+		int posY = 0;
+		for (int i = 0; i < level.length; i++)
+			for (int j = 0; j < level[i].length; j++)
+			{
+				if (level[i][j] == ('@'))
+				{
+					posY = i;
+				}
+			}
+		return posY;
+	}
+	
+	public static void main(String[] args)
+	{  
+		// levelAusgeben(levelEinlesen("Level01.txt"));
+		// levelAusgeben(levelEinlesen("Level02.txt"));
+		// levelAusgeben(levelEinlesen("Level03.txt"));
+		// levelAusgeben(levelEinlesen("Level04.txt"));
+		// levelAusgeben(levelEinlesen("Level05.txt"));
+		// levelAusgeben(levelEinlesen("Level99.txt"));
+		
+		// char[][] level01 = levelEinlesen("Level01.txt");
+		// levelAusgeben(level01);
+		// level01 = ändere(level01, 0, 0, 'd');
+		// levelAusgeben(level01);
+		
+		char[][] level01 = levelEinlesen("Level01.txt");
+		levelAusgeben(level01);
+		// Out.print(posX(level01) +" "+ posY(level01));
+		// Out.println(level01[posY(level01)][posX(level01)]);
+	}
+}
