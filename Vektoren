@@ -1,0 +1,77 @@
+class Vektoren
+{
+  /**
+  Mit Konstruktor
+  */
+  /*
+  double x, y, z;
+  public Vektor(double x, double y, double z)
+  {
+    this.x = x; this.y = y; this.z = z;
+  }
+  public Vektor add(Vektor v1, Vektor v2)
+  {
+    v1.x + v2.x;
+    v1.y + v2.y;
+    v1.z + v2.z;  
+    return; //Vektor 
+  }
+  //Prod: return x*v.x+y*v.y+z*v.z;
+  //Norm: return Math.sqrt(this.prod(this));
+  */
+  static void addiere(int x1, int y1, int z1, int x2, int y2, int z2)
+  {
+    int x = x1 + x2;
+    int y = y1 + y2;
+    int z = z1 + z2;
+    Out.println("Das Ergebnis ist: " +x+ " " +y+ " " +z);
+  }
+  
+  static void skalarMult(int x1, int y1, int z1, int a)
+  {
+    int x = a*x1;
+    int y = a*y1;
+    int z = a*z1;
+    Out.println("Das Ergebnis ist: " +x+ " " +y+ " " +z);
+  }
+  
+  static void skalarProd(int x1, int y1, int z1, int x2, int y2, int z2)
+  {
+    int p = x1*x2+y1*y2+z1*z2;
+    Out.println("Das Ergebnis ist: " +p);
+  }
+  
+  public static void main (String[] args)
+  {
+    //Out.println("Addition von 2 Vektoren: ");
+    //Out.println("1. Vektor eingeben: ");
+    //int x1 = In.readInt();
+    //int y1 = In.readInt();
+    //int z1 = In.readInt();
+    //Out.println("2. Vektor eingeben: ");
+    //int x2 = In.readInt();
+    //int y2 = In.readInt();
+    //int z2 = In.readInt();
+    //addiere(x1, y1, z1, x2, y2, z2);
+    
+    //Out.println("Multiplikation mit einem Skalar: ");
+    //Out.println("Einen Vektor eingeben: ");
+    //int x3 = In.readInt();
+    //int y3 = In.readInt();
+    //int z3 = In.readInt();
+    //Out.println("Ein Skalar eingeben: ");
+    //int a = In.readInt();
+    //skalarMult(x3, y3, z3, a);
+    
+    Out.println("Skalarprodukt zweier Vektoren: ");
+    Out.println("1. Vektor eingeben: ");
+    int x4 = In.readInt();
+    int y4 = In.readInt();
+    int z4 = In.readInt();
+    Out.println("2. Vektor eingeben: ");
+    int x5 = In.readInt();
+    int y5 = In.readInt();
+    int z5 = In.readInt();
+    skalarProd(x4, y4, z4, x5, y5, z5);
+  }
+} 
